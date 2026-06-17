@@ -1,1 +1,64 @@
+body{
+    font-family:sans-serif;
+    margin:0;
+    padding:20px;
+    background:#ffffff;
+}
 
+.hidden{
+    display:none;
+}
+
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.title{
+    text-align:center;
+}
+
+.button-grid{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    justify-content:center;
+    margin:30px 0;
+}
+
+.button{
+    background:#c7f0f2;
+    border:3px solid #000;
+    border-radius:20px;
+    padding:15px;
+    min-width:120px;
+    text-align:center;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.todo{
+    margin-top:30px;
+}
+
+.todo-item{
+    margin:12px 0;
+}
+
+.progress{
+    font-size:18px;
+    font-weight:bold;
+}
+
+.back-button{
+    display:inline-block;
+    margin-bottom:20px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.item{
+    border-bottom:1px solid #ddd;
+    padding:12px 0;
+}
