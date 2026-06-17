@@ -1,1 +1,127 @@
-<h1>遠征アプリ開発中！</h1>
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>遠征アプリ</title>
+
+<style>
+body{
+    font-family:sans-serif;
+    margin:0;
+    padding:20px;
+    background:#ffffff;
+}
+
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.title{
+    text-align:center;
+}
+
+.button-grid{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    justify-content:center;
+    margin:30px 0;
+}
+
+.button{
+    background:#c7f0f2;
+    border:3px solid #000;
+    border-radius:20px;
+    padding:15px;
+    min-width:120px;
+    text-align:center;
+    font-weight:bold;
+}
+
+.todo{
+    margin-top:30px;
+}
+
+.todo-item{
+    margin:12px 0;
+}
+
+.progress{
+    font-size:18px;
+    font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+<div>NEXT ➜</div>
+<div>☰</div>
+</div>
+
+<div class="title">
+<h1>旅のタイトル</h1>
+<div>2026/7/1～7/3</div>
+<div>あと14日</div>
+</div>
+
+<div class="button-grid">
+
+<div class="button">
+持ち物<br>
+<span class="progress">15/18</span>
+</div>
+
+<div class="button">
+お土産<br>
+<span class="progress">2/3</span>
+</div>
+
+<div class="button">
+メモ
+</div>
+
+<div class="button">
+行きたい場所<br>
+5件
+</div>
+
+<div class="button">
+日程表
+</div>
+
+<div class="button">
+やること
+</div>
+
+</div>
+
+<div class="todo">
+
+<h2>やること</h2>
+
+<div class="todo-item">
+☐ 宿予約
+</div>
+
+<div class="todo-item">
+☐ 美容室予約
+</div>
+
+<div class="todo-item">
+☐ 服決める
+</div>
+
+<div class="todo-item">
+☐ ネイル
+</div>
+
+</div>
+
+</body>
+</html>
