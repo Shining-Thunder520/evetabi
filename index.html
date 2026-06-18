@@ -6,7 +6,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>遠征アプリ</title>
 
-<style>
+.hidden{
+    display:none;
+}
+
+.back-button{
+    font-size:20px;
+    font-weight:bold;
+    margin-bottom:20px;
+    cursor:pointer;
+}
+
+.packing-item{
+    padding:10px 0;
+    border-bottom:1px solid #ddd;
+}
+    <style>
 body{
     font-family:sans-serif;
     margin:0;
@@ -72,11 +87,11 @@ body{
 
 <div class="button-grid">
 
-<div class="button">
+<div class="button" onclick="openPacking()">
 持ち物<br>
 <span class="progress">15/18</span>
 </div>
-
+    
 <div class="button">
 お土産<br>
 <span class="progress">2/3</span>
@@ -123,5 +138,53 @@ body{
 
 </div>
 
+    <div id="packingPage" class="hidden">
+
+<div class="back-button" onclick="closePacking()">
+← 戻る
+</div>
+
+<h1>持ち物</h1>
+
+<div class="packing-item">
+☐ 財布
+</div>
+
+<div class="packing-item">
+☐ スマホ
+</div>
+
+<div class="packing-item">
+☐ モバイルバッテリー
+</div>
+
+<div class="packing-item">
+☐ チケット
+</div>
+
+</div>
+
+<script>
+
+function openPacking(){
+    document.querySelector('.header').style.display='none';
+    document.querySelector('.title').style.display='none';
+    document.querySelector('.button-grid').style.display='none';
+    document.querySelector('.todo').style.display='none';
+
+    document.getElementById('packingPage').classList.remove('hidden');
+}
+
+function closePacking(){
+    document.querySelector('.header').style.display='flex';
+    document.querySelector('.title').style.display='block';
+    document.querySelector('.button-grid').style.display='flex';
+    document.querySelector('.todo').style.display='block';
+
+    document.getElementById('packingPage').classList.add('hidden');
+}
+
+</script>
+    
 </body>
 </html>
