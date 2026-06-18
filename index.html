@@ -198,21 +198,25 @@ function closePacking(){
 
     document.getElementById('packingPage').classList.add('hidden');
 }
-let packingItems = [
+
+    let packingItems = [
     {
         name:"財布",
         carry:false,
-        optional:false
+        optional:false,
+        checked:false
     },
     {
         name:"スマホ",
         carry:true,
-        optional:false
+        optional:false,
+        checked:false
     },
     {
         name:"着替え",
         carry:false,
-        optional:true
+        optional:true,
+        checked:false
     }
 ];
 
@@ -223,7 +227,7 @@ function renderPacking(){
 
     list.innerHTML = "";
 
-    packingItems.forEach(item=>{
+  packingItems.forEach((item,index)=>{
 
         let tags = "";
 
@@ -235,11 +239,15 @@ function renderPacking(){
             tags += " ☁️";
         }
 
-        list.innerHTML += `
-        <div class="packing-item">
-            ☐ ${item.name}${tags}
-        </div>
-        `;
+       const mark =
+    item.checked ? "☑" : "☐";
+
+list.innerHTML += `
+<div class="packing-item"
+onclick="togglePacking(${index})">
+    ${mark} ${item.name}${tags}
+</div>
+`;
     });
 }
 
@@ -263,13 +271,46 @@ function addPackingItem(){
         );
 
     packingItems.push({
-        name:name,
-        carry:carry,
-        optional:optional
-    });
+    name:name,
+    carry:carry,
+    optional:optional,
+    checked:false
+});
 
     renderPacking();
 }
+function togglePacking(index){
+
+    packingItems[index].checked =
+        !packingItems[index].checked;
+
+    savePacking();
+
+    renderPacking();
+}
+
+function savePacking(){
+
+    localStorage.setItem(
+        "packingItems",
+        JSON.stringify(packingItems)
+    );
+}
+
+function loadPacking(){
+
+    const saved =
+        localStorage.getItem(
+            "packingItems"
+        );
+
+    if(saved){
+        packingItems =
+            JSON.parse(saved);
+    }
+}
+
+loadPacking();
 </script>
     
 </body>
