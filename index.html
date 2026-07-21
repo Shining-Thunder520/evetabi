@@ -181,6 +181,7 @@
 <script>
 
 function openPacking(){
+    loadPacking();
     document.querySelector('.header').style.display='none';
     document.querySelector('.title').style.display='none';
     document.querySelector('.button-grid').style.display='none';
@@ -301,6 +302,7 @@ function addPackingItem() {
     item.className = "packing-item";
 
     item.innerHTML = `
+    item.querySelector("input").addEventListener("change", savePacking);
         <label>
             <input type="checkbox">
             ${name}
