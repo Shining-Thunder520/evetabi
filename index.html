@@ -283,9 +283,9 @@ function renderPacking(){
     item.checked ? "☑" : "☐";
 
 list.innerHTML += `
-<div class="packing-item"
-onclick="togglePacking(${index})">
-    ${mark} ${item.name}${tags}
+<div class="packing-item" onclick="togglePacking(${index})">
+    <span style="font-size:22px;">${mark}</span>
+    ${item.name}${tags}
 </div>
 `;
     });
