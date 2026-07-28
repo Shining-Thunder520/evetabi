@@ -235,6 +235,10 @@ function renderPacking(){
 
         let tags = "";
 
+      if(item.pinned){
+    tags += " 📌";
+      }
+
         if(item.carry){
             tags += " ✈️";
         }
