@@ -165,7 +165,10 @@
 </div>
 
 <div id="packingList"></div>
-
+<div id="packingEdit" class="hidden">
+    編集画面
+</div>
+     
 <hr>
 
 <div>
@@ -319,6 +322,9 @@ function togglePinned(index){
 }
 
 function openPackingEdit(index){
+
+    document.getElementById("packingEdit")
+        .classList.remove("hidden");
 
 }
 
