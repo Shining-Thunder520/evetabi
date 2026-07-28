@@ -250,12 +250,7 @@ function renderPacking(){
        const mark =
     item.checked ? "☑" : "☐";
 
-list.innerHTML += `
-<div class="packing-item" onclick="togglePacking(${index})">
-    <span style="font-size:22px;">${mark}</span>
-    ${item.name}${tags}
-</div>
-`;
+renderPacking
     });
 }
 
@@ -282,6 +277,36 @@ function togglePacking(index){
 
     packingItems[index].checked =
         !packingItems[index].checked;
+
+    savePacking();
+
+    renderPacking();
+}
+
+function toggleCarry(index){
+
+    packingItems[index].carry =
+        !packingItems[index].carry;
+
+    savePacking();
+
+    renderPacking();
+}
+
+function toggleOptional(index){
+
+    packingItems[index].optional =
+        !packingItems[index].optional;
+
+    savePacking();
+
+    renderPacking();
+}
+
+function togglePinned(index){
+
+    packingItems[index].pinned =
+        !packingItems[index].pinned;
 
     savePacking();
 
