@@ -226,31 +226,36 @@ function closePacking(){
     
 function renderPacking(){
 
-    const list =
-        document.getElementById("packingList");
+    const list = document.getElementById("packingList");
 
     list.innerHTML = "";
 
-  packingItems.forEach((item,index)=>{
+    packingItems.forEach((item,index)=>{
 
-        let tags = "";
+        const mark = item.checked ? "☑" : "☐";
 
-      if(item.pinned){
-    tags += " 📌";
-      }
+        list.innerHTML += `
+        <div class="packing-item">
 
-        if(item.carry){
-            tags += " ✈️";
-        }
+            <span onclick="togglePacking(${index})">
+                <span style="font-size:22px;">${mark}</span>
+                ${item.name}
+            </span>
 
-        if(item.optional){
-            tags += " ☁️";
-        }
+            <button onclick="togglePinned(${index}); event.stopPropagation();">
+                ${item.pinned ? "📌" : "📍"}
+            </button>
 
-       const mark =
-    item.checked ? "☑" : "☐";
+            <button onclick="toggleCarry(${index}); event.stopPropagation();">
+                ${item.carry ? "✈️" : "🛫"}
+            </button>
 
-renderPacking
+            <button onclick="toggleOptional(${index}); event.stopPropagation();">
+                ${item.optional ? "☁️" : "🌤️"}
+            </button>
+
+        </div>
+        `;
     });
 }
 
