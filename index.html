@@ -202,21 +202,24 @@ function closePacking(){
 
     let packingItems = [
     {
-        name:"財布",
-        carry:false,
-        optional:false,
-        checked:false
+    name:"財布",
+    carry:false,
+    optional:false,
+    pinned:false,
+    checked:false
     },
     {
         name:"スマホ",
         carry:true,
         optional:false,
+        pinned:false,
         checked:false
     },
     {
         name:"着替え",
         carry:false,
         optional:true,
+        pinned:false,
         checked:false
     }
 ];
@@ -259,10 +262,11 @@ function addPackingItem() {
     if (!name) return;
 
     packingItems.push({
-        name: name,
-        carry: false,
-        optional: false,
-        checked: false
+    name: name,
+    carry: false,
+    optional: false,
+    pinned: false,
+    checked: false
     });
 
     savePacking();
