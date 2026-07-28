@@ -220,45 +220,6 @@ function closePacking(){
         checked:false
     }
 ];
-
-function savePacking() {
-    const items = [];
-
-    document.querySelectorAll("#packingList .packing-item").forEach(item => {
-        const checkbox = item.querySelector("input");
-        const text = item.textContent.trim();
-
-        items.push({
-            name: text,
-            checked: checkbox.checked
-        });
-    });
-
-    localStorage.setItem("packingList", JSON.stringify(items));
-}
-
-function loadPacking() {
-    const data = JSON.parse(localStorage.getItem("packingList")) || [];
-
-    const list = document.getElementById("packingList");
-    list.innerHTML = "";
-
-    data.forEach(item => {
-        const div = document.createElement("div");
-        div.className = "packing-item";
-
-        div.innerHTML = `
-            <label>
-                <input type="checkbox" ${item.checked ? "checked" : ""}>
-                ${item.name}
-            </label>
-        `;
-
-        div.querySelector("input").addEventListener("change", savePacking);
-
-        list.appendChild(div);
-    });
-}
     
 function renderPacking(){
 
