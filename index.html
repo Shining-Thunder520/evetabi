@@ -237,7 +237,7 @@ function renderPacking(){
         list.innerHTML += `
         <div class="packing-item">
 
-            <span onclick="togglePacking(${index})">
+            <span onclick="openPackingEdit(${index})">
                 <span style="font-size:22px;">${mark}</span>
                 ${item.name}
             </span>
@@ -316,6 +316,10 @@ function togglePinned(index){
     savePacking();
 
     renderPacking();
+}
+
+function openPackingEdit(index){
+
 }
 
 function savePacking(){
