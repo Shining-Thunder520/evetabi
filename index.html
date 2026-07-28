@@ -185,7 +185,13 @@
 
 <div id="packingList"></div>
 <div id="packingEdit" class="hidden">
-    編集画面
+
+    <h2>アイテム編集</h2>
+
+    <button onclick="closePackingEdit()">
+        閉じる
+    </button>
+
 </div>
      
 <hr>
@@ -344,6 +350,13 @@ function openPackingEdit(index){
 
     document.getElementById("packingEdit")
         .classList.remove("hidden");
+
+}
+
+function closePackingEdit(){
+
+    document.getElementById("packingEdit")
+        .classList.add("hidden");
 
 }
 
