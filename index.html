@@ -191,9 +191,10 @@
     <p>持ち物名</p>
 
     <input
-        type="text"
-        id="packingName"
-        placeholder="持ち物名を入力">
+    type="text"
+    id="packingName"
+    placeholder="持ち物名を入力"
+    oninput="changePackingName()">
 
     <br><br>
 
@@ -377,6 +378,17 @@ function closePackingEdit(){
 
     document.getElementById("packingEdit")
         .classList.add("hidden");
+
+}
+
+function changePackingName(){
+
+    packingItems[editingIndex].name =
+        document.getElementById("packingName").value;
+
+    savePacking();
+
+    renderPacking();
 
 }
 
