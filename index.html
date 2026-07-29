@@ -359,6 +359,11 @@ function togglePinned(index){
 
 function openPackingEdit(index){
 
+    editingIndex = index;
+
+    document.getElementById("packingName").value =
+        packingItems[index].name;
+
     document.getElementById("packingEdit")
         .classList.remove("hidden");
 
