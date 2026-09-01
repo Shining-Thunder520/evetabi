@@ -413,10 +413,6 @@ function openPackingEdit(index){
 
 }
 
-function changePackingName(){
-
-}
-
 function closePackingEdit(){
 
     document.getElementById("packingEdit")
@@ -451,6 +447,23 @@ function changePackingName(){
     renderPacking();
 
 }
+
+function changePackingOptions(){
+
+    if(editingIndex === -1) return;
+
+    packingItems[editingIndex].pinned =
+        document.getElementById("packingPinned").checked;
+
+    packingItems[editingIndex].carry =
+        document.getElementById("packingCarry").checked;
+
+    packingItems[editingIndex].optional =
+        document.getElementById("packingOptional").checked;
+
+    savePacking();
+    renderPacking();
+}    
 
 function savePacking(){
 
