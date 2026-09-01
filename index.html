@@ -303,7 +303,12 @@ function addPackingItem() {
 
     const name = prompt("持ち物を入力してください");
 
-    if (!name) return;
+if (name === null) return;
+
+if (!name.trim()) {
+    alert("持ち物名を入力してください");
+    return;
+}
 
     packingItems.push({
     name: name,
