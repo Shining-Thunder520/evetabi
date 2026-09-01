@@ -392,6 +392,23 @@ function closePackingEdit(){
 
 }
 
+function deletePackingItem(){
+
+    if(editingIndex === -1) return;
+
+    const name = packingItems[editingIndex].name;
+
+    if(!confirm(`「${name}」を削除しますか？`)) return;
+
+    packingItems.splice(editingIndex, 1);
+
+    editingIndex = -1;
+
+    savePacking();
+    renderPacking();
+    closePackingEdit();
+}    
+
 function changePackingName(){
 
     packingItems[editingIndex].name =
