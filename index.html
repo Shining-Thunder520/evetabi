@@ -214,7 +214,7 @@
 
 <label>
     <input type="checkbox" id="packingOptional" onchange="changePackingOptions()">
-    ☁️ 余裕があれば持っていく
+    ⛅ 余裕があれば持っていく
 </label>
 
 <br>
@@ -240,7 +240,7 @@
 </div>
 
 <div>
-☁️ 余裕があれば
+⛅ 余裕があれば
 </div>
 
 </div>
@@ -320,7 +320,7 @@ function renderPacking(){
             </button>
 
             <button onclick="toggleOptional(${index}); event.stopPropagation();">
-                ${item.optional ? "☁️" : "🌤️"}
+                ${item.optional ? "⛅" : "🌤️"}
             </button>
 
         </div>
@@ -399,6 +399,15 @@ function openPackingEdit(index){
     document.getElementById("packingName").value =
         packingItems[index].name;
 
+    document.getElementById("packingPinned").checked =
+        packingItems[index].pinned;
+
+    document.getElementById("packingCarry").checked =
+        packingItems[index].carry;
+
+    document.getElementById("packingOptional").checked =
+        packingItems[index].optional;
+    
     document.getElementById("packingEdit")
         .classList.remove("hidden");
 
