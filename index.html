@@ -196,6 +196,29 @@
        placeholder="持ち物名を入力"
        oninput="changePackingName()">
 
+<br>
+
+<label>
+    <input type="checkbox" id="packingPinned" onchange="changePackingOptions()">
+    📌 ピン止め
+</label>
+
+<br>
+
+<label>
+    <input type="checkbox" id="packingCarry" onchange="changePackingOptions()">
+    ✈️ 機内持ち込み
+</label>
+
+<br>
+
+<label>
+    <input type="checkbox" id="packingOptional" onchange="changePackingOptions()">
+    ☁️ 余裕があれば持っていく
+</label>
+
+<br>
+    
     <br><br>
 
     <button onclick="closePackingEdit()">
